@@ -1,27 +1,42 @@
-<script>
-    function ageChecker(ageToBeChecked) {
-        let age = ageToBeChecked;
-        let start;
-        let end;
-        let responses = "Too young In the required age range Too old";
-        if (age <= 17) {
-            start = responses.indexOf("Too");
-            end = responses.indexOf("In");
-        } else if (age >= 18 && age <= 65) {
-            start = responses.indexOf("In");
-            end = responses.lastIndexOf("Too");
-        } else {
-            start = responses.lastIndexOf("Too");
-            end = undefined;
-        }
-        console.log(age + " – " + responses.substring(start, end));
-    }
+<!DOCTYPE html>
+<html>
 
+<body>
 
-    for (let count = 10; count < 80; count=count+5) {
-        ageChecker(count)
-        if (count == 80) {
-            break;
+    <h2>My First JavaScript</h2>
+    <script>
+        function ageChecker(ageToBeChecked) {
+            let age = ageToBeChecked;
+            let start;
+            let end;
+            let responses = "Too young In the required age range Too old";
+            if (age <= 17) {
+                start = responses.indexOf("Too");
+                end = responses.indexOf("In");
+            } else if (age >= 18 && age <= 65) {
+                start = responses.indexOf("In");
+                end = responses.lastIndexOf("Too");
+            } else {
+                start = responses.lastIndexOf("Too");
+                end = undefined;
+            }
+            console.log(age + " – " + responses.substring(start, end));
+            let string=(age + " – " + responses.substring(start, end))
+            document.write(string);
         }
-    }
-</script>
+
+        function trigger() {
+            for (let count = 10; count < 80; count = count + 5) {
+                ageChecker(count)
+                if (count == 80) {
+                    break;
+                }
+            }
+        }
+
+    </script>
+    <button type="button" onclick="trigger()">Click me!</button>
+
+</body>
+
+</html>
