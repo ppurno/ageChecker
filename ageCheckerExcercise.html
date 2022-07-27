@@ -1,1 +1,34 @@
-//
+<script>
+    function ageChecker(ageToBeChecked) {
+        let age = ageToBeChecked;
+        let start;
+        let end;
+        let responses = "Too young In the required age range Too old";
+        if (age <= 17) {
+            start = responses.indexOf("Too");
+            end = responses.indexOf("In");
+        } else if (age >= 18 && age <= 65) {
+            start = responses.indexOf("In");
+            end = responses.lastIndexOf("Too");
+        } else {
+            start = responses.lastIndexOf("Too");
+            end = undefined;
+        }
+        console.log(age + " – " + responses.substring(start, end));
+    }
+
+
+    let count = 10;
+    let increments = 5;
+    let endValue = 80;
+    ageChecker(count)
+    while (true) {
+        count=increments + count;
+        if (count == 80) {
+            break;
+        }
+        ageChecker(count);
+        
+    }
+
+</script>
