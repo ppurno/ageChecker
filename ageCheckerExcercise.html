@@ -5,7 +5,7 @@
 
     <h2>My First JavaScript</h2>
     <script>
-        function ageChecker(ageToBeChecked) {
+        let ageChecker=(ageToBeChecked) =>{
             let age = ageToBeChecked;
             let start;
             let end;
@@ -21,7 +21,7 @@
                 end = undefined;
             }
             console.log(age + " – " + responses.substring(start, end));
-            let string=(age + " – " + responses.substring(start, end))
+            let string=(age + " – " + responses.substring(start, end)+" ")
             document.write(string);
         }
 
